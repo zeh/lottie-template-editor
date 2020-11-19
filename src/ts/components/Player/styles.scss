@@ -2,12 +2,7 @@
 @import "../../../scss/includes/sizes.scss";
 
 .main {
-	margin: 0;
-
-	min-height: calc(var(--vh) * 100);
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
+	width: 100%;
 }
 
 .content {
