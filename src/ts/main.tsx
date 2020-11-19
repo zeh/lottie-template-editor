@@ -16,4 +16,4 @@ if (Config.Env.DEV_MODE) showFPS();
 
 ReactDOM.render(<App />, document.getElementById("content"));
 
-console.info(`Started; app built in ${Config.App.BUILD_DATE}, dev mode is ${Config.Env.DEV_MODE ? "ON " : "OFF"}.`);
+console.info(`Started; app built in ${Config.App.BUILD_DATE}, dev mode is ${Config.Env.DEV_MODE ? "ON" : "OFF"}.`);
