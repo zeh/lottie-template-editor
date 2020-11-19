@@ -2,14 +2,9 @@
 @import "../../../scss/includes/sizes.scss";
 
 .main {
-	margin: 0;
-
-	min-height: calc(var(--vh) * 100);
+	width: 400px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-}
-
-.content {
-	flex-grow: 1;
+	background-color: #eeeeee;
 }
