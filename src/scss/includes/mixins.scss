@@ -1,0 +1,17 @@
+@import "src/scss/includes/colors.scss";
+@import "src/scss/includes/queries.scss";
+
+@mixin basic-reset-touch-selectors {
+	outline: none;
+	user-select: none;
+	-webkit-tap-highlight-color: $color-basic-transparent;
+	-moz-tap-highlight-color: $color-basic-transparent;
+}
+
+@mixin layout-absolute-fill-width-height {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	top: 0;
+	right: 0;
+}

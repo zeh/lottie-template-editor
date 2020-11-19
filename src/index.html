@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Lottie Template Editor</title>
+
+	<!-- Font embeds -->
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+	<!-- Styles -->
+<% for (var key in htmlWebpackPlugin.files.css) { %>	<link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[key] %><%= htmlWebpackPlugin.options.cacheBuster %>">
+<% } %>
+	<!-- Metadata: mobile devices -->
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body>
+	<div id="content"></div>
+<% for (var key in htmlWebpackPlugin.files.js) { %>	<script defer type="text/javascript" src="<%= htmlWebpackPlugin.files.js[key] %><%= htmlWebpackPlugin.options.cacheBuster %>"></script>
+<% } %></body>
+</html>

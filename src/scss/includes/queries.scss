@@ -1,0 +1,52 @@
+// Tiny, small, medium large
+$screen-small-min: 470px;
+$screen-medium-min: 960px;
+$screen-large-min: 1280ox;
+
+@mixin for-orientation-landscape {
+	@media only screen and (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin for-orientation-portrait {
+	@media only screen and (orientation: portrait) {
+		@content;
+	}
+}
+
+@mixin for-size-tiny-only {
+	@media (max-width: #{$screen-small-min - 1px}) {
+		@content;
+	}
+}
+
+@mixin for-size-small-plus {
+	@media (min-width: #{$screen-small-min}) {
+		@content;
+	}
+}
+
+@mixin for-size-small-only {
+	@media (min-width: #{$screen-small-min}) and (max-width: #{$screen-medium-min - 1px}) {
+		@content;
+	}
+}
+
+@mixin for-size-medium-plus {
+	@media (min-width: #{$screen-medium-min}) {
+		@content;
+	}
+}
+
+@mixin for-size-medium-only {
+	@media (min-width: #{$screen-medium-min}) and (max-width: #{$screen-large-min - 1px}) {
+		@content;
+	}
+}
+
+@mixin for-size-large-plus {
+	@media (min-width: #{$screen-large-min}) {
+		@content;
+	}
+}

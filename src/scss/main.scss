@@ -1,0 +1,45 @@
+@import "~modern-normalize/modern-normalize.css";
+
+@import "./includes/colors.scss";
+
+#content {
+	overflow: hidden;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--vh: 1vh;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: $color-theme-background;
+	font-family: sans-serif;
+	font-size: 12px;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	overflow-y: overlay;
+}
+
+// Other global stuff
+a {
+	color: $color-theme-text-link;
+	text-decoration: none;
+}
+a:focus {
+	color: $color-theme-text-link-focused;
+	text-decoration: underline;
+}
+a:hover {
+	color: $color-theme-text-link-focused;
+	text-decoration: underline;
+}
+::placeholder {
+	opacity: $color-opacity-input-placeholder;
+	color: inherit;
+}

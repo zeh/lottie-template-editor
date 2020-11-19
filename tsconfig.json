@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "es2018",
+		"module": "commonjs",
+		"strict": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"sourceMap": true,
+		"jsx": "react",
+		"baseUrl": ".",
+		"experimentalDecorators": true,
+		"paths": {
+			"*" : [ "src/ts/*" ]
+		},
+		"lib": [
+			"dom",
+			"ESNext",
+		]
+	},
+	"include": [
+		"node_modules/@types/**/*.d.ts",
+		"./src/ts/**/*",
+		"./webpack.config.ts"
+	],
+	"exclude": [
+		"./dist/**"
+	],
+	"compileOnSave": false
+}

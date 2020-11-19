@@ -1,0 +1,14 @@
+# NPM/task management stuff
+node_modules
+npm-debug.log*
+yarn-error.log
+.tscache
+.nyc_output
+report.*.json
+
+# Build folder
+dist
+dist-*
+
+# Test files
+coverage

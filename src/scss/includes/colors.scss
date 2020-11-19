@@ -1,0 +1,29 @@
+// Basics
+$color-basic-black: #000000;
+$color-basic-transparent: rgba(0, 0, 0, 0);
+$color-basic-white: #ffffff;
+$color-basic-white-subtle: #dddddd;
+
+// Theme
+$color-theme-background: $color-basic-white-subtle;
+$color-theme-link-external-background: rgba($color-basic-black, 0.9);
+$color-theme-link-external-foreground: $color-basic-white;
+$color-theme-link-internal-background: $color-basic-black;
+$color-theme-link-internal-foreground: $color-basic-white;
+$color-theme-selectors: $color-basic-black;
+$color-theme-text: $color-basic-black;
+$color-theme-text-detail: rgba($color-theme-text, 0.5);
+$color-theme-text-divider: rgba($color-theme-text, 0.25);
+$color-theme-text-selection-background: $color-basic-black;
+$color-theme-text-selection-foreground: $color-basic-white;
+$color-theme-text-detail-selection-background: rgba($color-theme-text-selection-background, 0.5);
+$color-theme-text-detail-selection-foreground: rgba($color-theme-text-selection-foreground, 0.5);
+$color-theme-text-link: #337ab7;
+$color-theme-text-link-focused: scale-color($color-theme-text-link, $lightness: -30%);
+
+// Opacities
+$color-opacity-selectors: 0.1;
+$color-opacity-link-internal-inactive: 0.9;
+$color-opacity-input-placeholder: 0.55;
+
+$color-scrollbar-foreground: rgba(128, 128, 128, 0.8);
