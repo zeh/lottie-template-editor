@@ -11,15 +11,5 @@
 }
 
 .content {
-	display: flex;
 	flex-grow: 1;
-	flex-direction: row;
-}
-
-.player {
-	flex: auto;
-}
-
-.sidebar {
-	flex: auto;
 }
