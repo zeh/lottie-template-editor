@@ -1,111 +1,42 @@
 // Basic fonts
-@mixin type-basic-headline-regular {
-	font-family: "Roboto Mono", sans-serif;
-	font-weight: 400;
+@mixin type-space-grotesk-medium {
+	font-family: "Space Grotesk", sans-serif;
+	font-weight: 500;
 }
 
-@mixin type-basic-headline-bold {
-	font-family: "Roboto Mono", sans-serif;
-	font-weight: 700;
-}
-
-@mixin type-basic-body-regular {
-	font-family: "Fira Mono", sans-serif;
-	font-weight: 400;
-}
-
-@mixin type-basic-body-bold {
-	font-family: "Fira Mono", sans-serif;
-	font-weight: 700;
+@mixin type-space-grotesk-bold {
+	font-family: "Space Grotesk", sans-serif;
+	font-weight: 600;
 }
 
 // Actual styles
 
-@mixin type-style-headline-60 {
-	@include type-basic-headline-regular;
-	font-size: 60px;
+@mixin type-h1 {
+	@include type-space-grotesk-medium;
+	font-size: 36px;
 	line-height: 1;
 }
 
-@mixin type-style-headline-60-adaptive {
-	@include type-basic-headline-regular;
-	font-size: 6vw;
-	line-height: 6vw;
-
-	/* Resize, but with a max and min range */
-	@media only screen and (min-width: 1000px) {
-		font-size: 60px;
-		line-height: 1;
-	}
-
-	@media only screen and (max-width: 400px) {
-		font-size: 24px;
-		line-height: 1;
-	}
+@mixin type-h2 {
+	@include type-space-grotesk-medium;
+	font-size: 26px;
+	line-height: 1;
 }
 
-@mixin type-style-headline-30-adaptive {
-	@include type-basic-headline-regular;
-	font-size: 3vw;
-	line-height: 3vw;
-
-	/* Resize, but with a max and min range */
-	@media only screen and (min-width: 1000px) {
-		font-size: 30px;
-		line-height: 1;
-	}
-
-	@media only screen and (max-width: 400px) {
-		font-size: 18px;
-		line-height: 1;
-	}
-}
-
-@mixin type-style-headline-20 {
-	@include type-basic-headline-regular;
+@mixin type-h3 {
+	@include type-space-grotesk-medium;
 	font-size: 20px;
 	line-height: 1;
 }
 
-@mixin type-style-headline-20-adaptive {
-	@include type-basic-headline-regular;
-	font-size: 2vw;
-	line-height: 2vw;
-
-	/* Resize, but with a max and min range */
-	@media only screen and (min-width: 1000px) {
-		font-size: 20px;
-		line-height: 1;
-	}
-
-	@media only screen and (max-width: 400px) {
-		font-size: 12px;
-		line-height: 1;
-	}
-}
-
-@mixin type-style-headline-18 {
-	@include type-basic-headline-regular;
-	font-size: 18px;
-	line-height: 1;
-}
-@mixin type-style-headline-16 {
-	@include type-basic-headline-regular;
+@mixin type-h4 {
+	@include type-space-grotesk-medium;
 	font-size: 16px;
 	line-height: 1;
 }
-@mixin type-style-headline-14 {
-	@include type-basic-headline-regular;
+
+@mixin type-p {
+	@include type-space-grotesk-medium;
 	font-size: 14px;
 	line-height: 1;
-}
-@mixin type-style-body-14 {
-	@include type-basic-body-regular;
-	font-size: 14px;
-	line-height: 150%;
-}
-@mixin type-style-body-13 {
-	@include type-basic-body-regular;
-	font-size: 13px;
-	line-height: 150%;
 }
