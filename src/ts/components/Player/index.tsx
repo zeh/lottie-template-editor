@@ -3,6 +3,8 @@ import { useState } from "react";
 import cx from "classnames";
 import Lottie, { Options } from "react-lottie";
 
+import Text from "components/Text";
+
 import * as s from "./styles.scss";
 
 interface IProps {
@@ -28,7 +30,18 @@ const Player = ({ animation, className }: IProps): JSX.Element => {
 	return (
 		<div className={cx(className, s.main)}>
 			<div className={s.canvas}>
-				<Lottie options={options} height={"100%"} width={"100%"} isStopped={isStopped} isPaused={isPaused} />
+				{animation ? (
+					<Lottie options={options} height={"100%"} width={"100%"} isStopped={isStopped} isPaused={isPaused} />
+				) : (
+					<div className={s.placeholderMessage}>
+						<Text.H2>{"No file to play!"}</Text.H2>
+						<Text.P>
+							{"Please drag a Lottie-generated JSON file into"}
+							<br />
+							{"this window to start editing and playback."}
+						</Text.P>
+					</div>
+				)}
 			</div>
 		</div>
 	);
