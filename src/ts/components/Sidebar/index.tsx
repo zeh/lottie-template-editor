@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useMemo } from "react";
+import { Fragment, useMemo } from "react";
 import cx from "classnames";
 
 import Text from "components/Text";
@@ -28,11 +28,11 @@ const FieldTextCell = ({ field }: { field: IFieldText }): JSX.Element => {
 			<div className={s.fieldTitle}>{"Text"}</div>
 			<div className={s.fieldName}>{`Name: ${field.name}`}</div>
 			{field.keyframes.map((k, ki) => (
-				<>
+				<Fragment key={ki}>
 					<div className={s.fieldKeyframe}>{`Keyframe: ${ki + 1}`}</div>
 					<div className={s.fieldValue}>{k.value}</div>
 					<div className={s.fieldValue}>{colorToHex(k.color)}</div>
-				</>
+				</Fragment>
 			))}
 		</div>
 	);
