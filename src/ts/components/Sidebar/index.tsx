@@ -1,8 +1,9 @@
 import * as React from "react";
-import { Fragment, useMemo } from "react";
+import { Fragment, useCallback, useMemo, useState } from "react";
 import cx from "classnames";
 
 import Text from "components/Text";
+import InputText from "components/InputText";
 import { FieldTypes, IFieldImage, IFieldShape, IFieldText, extractFields } from "utils/AnimationUtils";
 
 import * as s from "./styles.scss";
@@ -22,7 +23,12 @@ const colorToHex = (c: number[]): string => {
 	);
 };
 
-const FieldTextCell = ({ field }: { field: IFieldText }): JSX.Element => {
+interface IFieldTextProps {
+	field: IFieldText;
+	onChangeText?: (value: string, keyframeIndex: number) => void;
+}
+
+const FieldTextCell = ({ onChangeText, field }: IFieldTextProps): JSX.Element => {
 	return (
 		<div className={s.fieldCell}>
 			<div className={s.fieldTitle}>{"Text"}</div>
@@ -30,7 +36,7 @@ const FieldTextCell = ({ field }: { field: IFieldText }): JSX.Element => {
 			{field.keyframes.map((k, ki) => (
 				<Fragment key={ki}>
 					<div className={s.fieldKeyframe}>{`Keyframe: ${ki + 1}`}</div>
-					<div className={s.fieldValue}>{k.value}</div>
+					<InputText value={k.value} onChange={(value) => onChangeText?.(value, ki)} />
 					<div className={s.fieldValue}>{colorToHex(k.color)}</div>
 				</Fragment>
 			))}
@@ -62,6 +68,16 @@ const FieldShapeCell = ({ field }: { field: IFieldShape }): JSX.Element => {
 const Sidebar = ({ animation, className }: IProps): JSX.Element => {
 	const fields = useMemo(() => extractFields(animation), [animation]);
 
+	const [changes, setChanges] = useState<any>({});
+
+	const handleChangeText = useCallback(
+		(f: IFieldText, value: string, keyframeIndex: number) => {
+			// TODO: add to list of changes
+			console.log(">>> change", f, value, keyframeIndex);
+		},
+		[animation],
+	);
+
 	return (
 		<div className={cx(className, s.main)}>
 			{animation ? (
@@ -69,7 +85,13 @@ const Sidebar = ({ animation, className }: IProps): JSX.Element => {
 					<div className={s.fieldsContainer}>
 						{fields.map((f, i) => {
 							if (f.type === FieldTypes.Text) {
-								return <FieldTextCell key={i} field={f}></FieldTextCell>;
+								return (
+									<FieldTextCell
+										key={i}
+										field={f}
+										onChangeText={(value, keyframeIndex) => handleChangeText(f, value, keyframeIndex)}
+									></FieldTextCell>
+								);
 							} else if (f.type === FieldTypes.Image) {
 								return <FieldImageCell key={i} field={f}></FieldImageCell>;
 							} else if (f.type === FieldTypes.Shape) {
