@@ -1,11 +1,14 @@
 import * as React from "react";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import cx from "classnames";
 
 import DropTarget from "components/DropTarget";
 import Player from "components/Player";
 import Sidebar from "components/Sidebar";
 import Text from "components/Text";
+import Config from "config/Config";
+
+import * as textAnimation from "assets/test-animation.json";
 
 import * as s from "./styles.scss";
 
@@ -35,6 +38,15 @@ const App = (): JSX.Element => {
 		},
 		[setAnimation],
 	);
+
+	useEffect(() => {
+		// In dev mode, load a test file by default
+		if (Config.Env.DEV_MODE) {
+			setTimeout(() => {
+				setAnimation(textAnimation);
+			}, 100);
+		}
+	}, []);
 
 	return (
 		<div className={s.main}>

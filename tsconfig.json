@@ -9,6 +9,7 @@
 		"jsx": "react",
 		"baseUrl": ".",
 		"experimentalDecorators": true,
+		"resolveJsonModule": true,
 		"paths": {
 			"*" : [ "src/ts/*" ]
 		},
