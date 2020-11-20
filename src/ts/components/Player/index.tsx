@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useMemo, useRef, useState, useCallback } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import cx from "classnames";
 import Lottie, { EventListener, Options } from "react-lottie";
 
@@ -93,12 +93,7 @@ const Player = ({ animation, className }: IProps): JSX.Element => {
 				</>
 			) : (
 				<div className={s.placeholderMessage}>
-					<Text.H2>{"No file to play!"}</Text.H2>
-					<Text.P>
-						{"Please drag a Lottie-generated JSON file into"}
-						<br />
-						{"this window to start editing and playback."}
-					</Text.P>
+					<Text.H2>{"No file to play"}</Text.H2>
 				</div>
 			)}
 		</div>

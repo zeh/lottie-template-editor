@@ -13,7 +13,7 @@
 .fields {
 	text-align: center;
 	overflow-y: scroll;
-	max-height: 100vh;
+	max-height: calc(var(--vh) * 100);
 }
 
 .fields-container {
