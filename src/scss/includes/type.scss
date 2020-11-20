@@ -15,28 +15,33 @@
 	@include type-space-grotesk-medium;
 	font-size: 36px;
 	line-height: 1;
+	margin: 0 0 0.5em;
 }
 
 @mixin type-h2 {
 	@include type-space-grotesk-medium;
 	font-size: 26px;
 	line-height: 1;
+	margin: 0 0 0.5em;
 }
 
 @mixin type-h3 {
 	@include type-space-grotesk-medium;
 	font-size: 20px;
 	line-height: 1;
+	margin: 0 0 0.5em;
 }
 
 @mixin type-h4 {
 	@include type-space-grotesk-medium;
 	font-size: 16px;
 	line-height: 1;
+	margin: 0 0 0.5em;
 }
 
 @mixin type-p {
 	@include type-space-grotesk-medium;
 	font-size: 14px;
-	line-height: 1;
+	line-height: 1.4;
+	margin: 0 0 0.5em;
 }
