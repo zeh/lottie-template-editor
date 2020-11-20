@@ -26,9 +26,14 @@ const FieldTextCell = ({ field }: { field: IFieldText }): JSX.Element => {
 	return (
 		<div className={s.fieldCell}>
 			<div className={s.fieldTitle}>{"Text"}</div>
-			<div className={s.fieldName}>{field.name}</div>
-			<div className={s.fieldValue}>{field.value}</div>
-			<div className={s.fieldValue}>{colorToHex(field.color)}</div>
+			<div className={s.fieldName}>{`Name: ${field.name}`}</div>
+			{field.keyframes.map((k, ki) => (
+				<>
+					<div className={s.fieldKeyframe}>{`Keyframe: ${ki + 1}`}</div>
+					<div className={s.fieldValue}>{k.value}</div>
+					<div className={s.fieldValue}>{colorToHex(k.color)}</div>
+				</>
+			))}
 		</div>
 	);
 };
@@ -37,8 +42,9 @@ const FieldImageCell = ({ field }: { field: IFieldImage }): JSX.Element => {
 	return (
 		<div className={s.fieldCell}>
 			<div className={s.fieldTitle}>{"Image"}</div>
-			<div className={s.fieldName}>{field.name}</div>
+			<div className={s.fieldName}>{`Name: ${field.name}`}</div>
 			<div className={s.fieldDetail}>{`${field.width}x${field.height}px`}</div>
+			<div className={s.fieldValue}>{field.assetName}</div>
 		</div>
 	);
 };
@@ -47,7 +53,7 @@ const FieldShapeCell = ({ field }: { field: IFieldShape }): JSX.Element => {
 	return (
 		<div className={s.fieldCell}>
 			<div className={s.fieldTitle}>{"Shape"}</div>
-			<div className={s.fieldName}>{field.name}</div>
+			<div className={s.fieldName}>{`Name: ${field.name}`}</div>
 			<div className={s.fieldValue}>{colorToHex(field.color)}</div>
 		</div>
 	);

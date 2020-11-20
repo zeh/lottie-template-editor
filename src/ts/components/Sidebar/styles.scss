@@ -41,6 +41,13 @@
 	margin: 0.5em 0;
 }
 
+.field-keyframe {
+	@include type-space-grotesk-medium;
+	font-size: 12px;
+	margin: 0.5em 0;
+	opacity: 0.8;
+}
+
 .field-detail {
 	@include type-space-grotesk-medium;
 	font-size: 12px;

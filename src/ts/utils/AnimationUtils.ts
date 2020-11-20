@@ -10,12 +10,15 @@ interface IFieldBase {
 
 export type IFieldText = IFieldBase & {
 	type: FieldTypes.Text;
-	value: string;
-	color: [number, number, number];
-	path: [ind: number, kIndex: number];
+	keyframes: Array<{
+		value: string;
+		color: [number, number, number];
+	}>;
+	path: [ind: number];
 };
 
 export type IFieldImage = IFieldBase & {
+	assetName: string;
 	type: FieldTypes.Image;
 	width: number;
 	height: number;
@@ -47,14 +50,11 @@ export const extractFields = (animation: any): IField[] => {
 		layers.forEach((l: any) => {
 			if (l.ty === 5) {
 				// Text
-				l.t.d.k.forEach((k: any, ki: number) => {
-					fields.push({
-						type: FieldTypes.Text,
-						name: l.nm,
-						value: k.s.t,
-						color: k.s.fc,
-						path: [l.ind, ki],
-					});
+				fields.push({
+					type: FieldTypes.Text,
+					name: l.nm,
+					keyframes: l.t.d.k.map((k: any) => ({ value: k.s.t, color: k.s.fc })),
+					path: [l.ind],
 				});
 			} else if (l.ty === 4) {
 				// Shape
@@ -70,6 +70,7 @@ export const extractFields = (animation: any): IField[] => {
 						fields.push({
 							type: FieldTypes.Image,
 							name: cl.nm,
+							assetName: imageAsset.id,
 							width: imageAsset.w,
 							height: imageAsset.h,
 							path: [cl.refId],
