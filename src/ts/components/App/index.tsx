@@ -15,7 +15,7 @@ const findValidJSONFile = async (files: File[]): Promise<TLottieFile | null> => 
 	const jsonFile = files.find((f) => f.name.endsWith(".json"));
 	if (!jsonFile) return null;
 	const text = JSON.parse(await jsonFile.text());
-	if (!text.v || !text.meta || !text.fonts) return null;
+	if (!text.v || !text.meta) return null;
 	return text as TLottieFile;
 };
 
