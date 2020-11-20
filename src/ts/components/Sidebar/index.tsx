@@ -6,6 +6,7 @@ import Text from "components/Text";
 import * as s from "./styles.scss";
 
 interface IProps {
+	animation: unknown | null;
 	className?: string;
 }
 
